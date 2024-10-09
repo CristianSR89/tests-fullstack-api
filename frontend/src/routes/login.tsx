@@ -19,11 +19,13 @@ import {
   redirect,
 } from "@tanstack/react-router"
 import { type SubmitHandler, useForm } from "react-hook-form"
-
 import Logo from "/assets/images/fastapi-logo.svg"
 import type { Body_login_login_access_token as AccessToken } from "../client"
 import useAuth, { isLoggedIn } from "../hooks/useAuth"
 import { emailPattern } from "../utils"
+import Navbar from "../components/Navbar/Navbar"
+import Header from "../components/Header/Header"
+import ProfileInfoHome from "../components/ProfileInfoHome/ProfileInfoHome"
 
 export const Route = createFileRoute("/login")({
   component: Login,
@@ -66,6 +68,9 @@ function Login() {
 
   return (
     <>
+      <Navbar></Navbar>
+      <Header></Header>
+      <ProfileInfoHome></ProfileInfoHome>
       <Container
         as="form"
         onSubmit={handleSubmit(onSubmit)}
@@ -129,7 +134,8 @@ function Login() {
         <Link as={RouterLink} to="/recover-password" color="blue.500">
           Forgot password?
         </Link>
-        <Button variant="primary" type="submit" isLoading={isSubmitting}>
+        <Button 
+          variant="primary" type="submit" isLoading={isSubmitting}>
           Log In
         </Button>
         <Text>

@@ -25,11 +25,11 @@ import { confirmPasswordRules, emailPattern, passwordRules } from "../utils"
 export const Route = createFileRoute("/signup")({
   component: SignUp,
   beforeLoad: async () => {
-    if (isLoggedIn()) {
+    //if (isLoggedIn()) {
       throw redirect({
         to: "/",
       })
-    }
+    //}
   },
 })
 
