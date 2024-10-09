@@ -21,7 +21,7 @@ declare module "@tanstack/react-router" {
     router: typeof router
   }
 }
-//test
+
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <ChakraProvider theme={theme}>
