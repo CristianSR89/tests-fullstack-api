@@ -27,6 +27,7 @@ import Navbar from "../components/Navbar/Navbar"
 import Header from "../components/Header/Header"
 import ProfileInfoHome from "../components/ProfileInfoHome/ProfileInfoHome"
 import Cheers from "../components/Cheers/Cheers"
+import DailyRewards from "../components/Cheers/DailyRewards/DailyRewards"
 
 export const Route = createFileRoute("/login")({
   component: Login,
@@ -73,6 +74,7 @@ function Login() {
       <Header></Header>
       <ProfileInfoHome></ProfileInfoHome>
       <Cheers></Cheers>
+      <DailyRewards></DailyRewards>
       <Container
         as="form"
         onSubmit={handleSubmit(onSubmit)}

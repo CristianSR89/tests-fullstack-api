@@ -1,5 +1,4 @@
-import {Box, Divider, Flex, Image, MenuItem, MenuList, Text} from "@chakra-ui/react";
-import { HamburgerIcon, LockIcon, UnlockIcon } from "@chakra-ui/icons";
+import {Box, Divider, Flex, Heading, Image, Text} from "@chakra-ui/react";
 
 const Cheers = () => {
     return (
@@ -20,7 +19,7 @@ const Cheers = () => {
                         <Image height="102" src="/public/assets/images/logo-cheers.png"/>
                         <Box h="102px">
                             <Box w="100%" h="18px" lineHeight="18px"></Box>
-                            <Text fontSize="52px" textAlign="center" h="84px">CHEERS</Text>
+                            <Heading as="h1" fontSize="52px" textAlign="center" h="84px">CHEERS</Heading>
                         </Box>
                     </Flex>
                     <Divider 
@@ -32,7 +31,7 @@ const Cheers = () => {
                         orientation="vertical"></Divider>
                     <Box>
                         <Text fontSize="18px" lineHeight="18px">BALANCE</Text>
-                        <Text textAlign="center" fontSize="52px" h="84px">0</Text>
+                        <Heading as="h3" textAlign="center" fontSize="52px" h="84px">0</Heading>
                     </Box>
                 </Flex>
                 <Text fontSize="16" color="white" textAlign="center" mt="1.5rem">

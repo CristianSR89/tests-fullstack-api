@@ -1,4 +1,4 @@
-import { extendTheme } from "@chakra-ui/react"
+import { background, extendTheme } from "@chakra-ui/react"
 
 const disabledStyles = {
   _disabled: {
@@ -10,7 +10,7 @@ const theme = extendTheme({
   styles: {
     global: {
       "body": {
-        bg: "black"
+        bg: "purple"
       }
     }
   },
@@ -24,6 +24,7 @@ const theme = extendTheme({
       dark: "#1A202C",
       darkSlate: "#252D3D",
       dim: "#A0AEC0",
+      claim: "#E89937",
     },
   },
   components: {
@@ -49,6 +50,20 @@ const theme = extendTheme({
             backgroundColor: "#E32727",
           },
         },
+        claim: {
+          backgroundColor: "ui.claim",
+          color: "black",
+          _hover: {
+            backgroundColor: "rgba(255, 255, 255, 0.16)",
+          },
+        },
+        no_disable: {
+          _disabled: {
+            _hover: {
+              background: "none"
+            },
+          },
+        }
       },
     },
     Tabs: {
