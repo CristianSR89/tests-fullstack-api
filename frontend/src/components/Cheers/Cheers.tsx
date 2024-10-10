@@ -14,7 +14,8 @@ const Cheers = () => {
                     fontWeight="bolder"
                     borderRadius="0 0 3rem 3rem"
                     overflow="auto"
-                    p="1rem">
+                    p="1rem"
+                    boxShadow="md">
                     <Flex w="100%" wrap="wrap" justify="space-between" align="center">
                         <Image height="102" src="/public/assets/images/logo-cheers.png"/>
                         <Box h="102px">
