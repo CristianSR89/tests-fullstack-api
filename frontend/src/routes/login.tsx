@@ -26,6 +26,7 @@ import { emailPattern } from "../utils"
 import Navbar from "../components/Navbar/Navbar"
 import Header from "../components/Header/Header"
 import ProfileInfoHome from "../components/ProfileInfoHome/ProfileInfoHome"
+import Cheers from "../components/Cheers/Cheers"
 
 export const Route = createFileRoute("/login")({
   component: Login,
@@ -71,6 +72,7 @@ function Login() {
       <Navbar></Navbar>
       <Header></Header>
       <ProfileInfoHome></ProfileInfoHome>
+      <Cheers></Cheers>
       <Container
         as="form"
         onSubmit={handleSubmit(onSubmit)}
