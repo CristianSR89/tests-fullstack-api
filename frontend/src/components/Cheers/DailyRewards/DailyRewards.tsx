@@ -121,7 +121,7 @@ const DailyRewards = (props: any) => {
                             }}
                             >
                             <Flex justify="center" >
-                                {rewardsConfig.map(({ rewards, bgColor, bgColorButton, radiantCircleColor }, index) => (
+                                {rewardsConfig.map(({ rewards, bgColor, bgColorButton, radiantCircleColor }) => (
                                     <VStack p="2rem 1px 1rem" key={bgColor} spacing="20px" backgroundColor={bgColor}>
                                         {rewards.map((item) => (
                                             <RewardBlock 
