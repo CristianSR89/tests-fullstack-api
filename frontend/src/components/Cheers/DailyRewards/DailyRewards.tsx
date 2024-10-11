@@ -1,4 +1,4 @@
-import {Box, Button, Card, Flex, Heading, Image, VStack} from "@chakra-ui/react";
+import {Box, Button, Card, Flex, Heading, Image, VStack, chakra} from "@chakra-ui/react";
 
 import RewardBlock from "./RewardBlock";
 
@@ -38,14 +38,16 @@ const rewardsConfig = [
     { id: 3, rewards: vipReward, bgColorButton: "rgb(243, 190, 68)", bgColor: "#E89937", radiantCircleColor: "rgb(250, 240, 137)" },
 ];
 
-const DailyRewards = () => {
+const DailyRewards = (props: any) => {
     return (
         <>
             <Card 
                 bg="rgb(0,0,0,0.5)" 
                 borderRadius="1.5rem" 
                 p="2rem" 
-                boxShadow="rgba(0, 0, 0, 1) 0px 3px 0px 1px">
+                boxShadow="rgba(0, 0, 0, 1) 0px 3px 0px 1px"
+                {...props}
+            >
                 <Heading 
                     letterSpacing="-3px" 
                     as="h2" 
@@ -141,5 +143,5 @@ const DailyRewards = () => {
         </>
     );
 }
-
-export default DailyRewards
+ 
+export default chakra(DailyRewards)

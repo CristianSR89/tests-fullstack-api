@@ -1,7 +1,9 @@
 import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons"
 import {
+  Box,
   Button,
   Container,
+  Flex,
   FormControl,
   FormErrorMessage,
   Icon,
@@ -72,9 +74,13 @@ function Login() {
     <>
       <Navbar></Navbar>
       <Header></Header>
-      <ProfileInfoHome></ProfileInfoHome>
-      <Cheers></Cheers>
-      <DailyRewards></DailyRewards>
+      <Flex justify="center" mt="3rem"> 
+        <ProfileInfoHome></ProfileInfoHome>
+        <Box ml="4rem">
+          <Cheers></Cheers>
+          <DailyRewards mt="3rem"></DailyRewards>
+        </Box>
+      </Flex>
       <Container
         as="form"
         onSubmit={handleSubmit(onSubmit)}
@@ -85,7 +91,7 @@ function Login() {
         gap={4}
         centerContent
       >
-        <Image
+        <Image 
           src={Logo}
           alt="FastAPI logo"
           height="auto"
