@@ -2,6 +2,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
 import { RouterProvider, createRouter } from "@tanstack/react-router"
 
 import { ChakraProvider } from "@chakra-ui/react"
+import Fonts from "./fonts"
 import { OpenAPI } from "./client"
 import ReactDOM from "react-dom/client"
 import { StrictMode } from "react"
@@ -24,6 +25,7 @@ declare module "@tanstack/react-router" {
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <StrictMode>
+    <Fonts/>
     <ChakraProvider theme={theme}>
       <QueryClientProvider client={queryClient}>
         <RouterProvider router={router} />

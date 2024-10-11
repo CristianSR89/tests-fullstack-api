@@ -4,7 +4,7 @@ import { HamburgerIcon, LockIcon, UnlockIcon } from "@chakra-ui/icons";
 const Navbar = () => {
     return (
         <>
-            <Flex justify='flex-end' bg="var(--chakra-colors-black)" p='1rem'>
+            <Flex justify='flex-end' bg="ui.dark" p='1rem'>
                 <Menu >
                     <MenuButton 
                         borderRadius='50%'
@@ -13,11 +13,11 @@ const Navbar = () => {
                         aria-label='Settings'
                         icon={<HamburgerIcon/>}
                     />
-                    <MenuList bg="var(--chakra-colors-black)" borderColor='gray.300'>
-                        <MenuItem as='a' href='#' color='white' bg="var(--chakra-colors-black)" icon={<LockIcon/>}>
+                    <MenuList bg="ui.dark" borderColor='gray.300'>
+                        <MenuItem as='a' href='#' color='white' bg="ui.dark" icon={<LockIcon/>}>
                             My profile
                         </MenuItem>
-                        <MenuItem as='a' href='#' color='red' bg="var(--chakra-colors-black)" icon={<UnlockIcon/>}>
+                        <MenuItem as='a' href='#' color='red' bg="ui.dark" icon={<UnlockIcon/>}>
                             Log out
                         </MenuItem>
                     </MenuList>

@@ -19,11 +19,11 @@ const RewardBlock: React.FC<{
                 <Button 
                     variant={isDisabled ? "no_disable" : ""} 
                     bg={bgColorButton} 
-                    borderColor="rgba(0, 0, 0, 0.3) 0px 3px 0px" 
                     boxShadow="rgba(0, 0, 0, 0.3) 0px 3px 0px 1px" 
                     w="100%" 
                     h="100%" 
                     p="0.25rem" 
+                    border="2px solid #245EB4"
                     borderRadius="20px"
                     background={`radial-gradient(circle, ${radiantCircleColor} 0%, transparent 80%)`}
                 >
