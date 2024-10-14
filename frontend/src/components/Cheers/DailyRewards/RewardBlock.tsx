@@ -5,7 +5,8 @@ const RewardBlock: React.FC<{
     bgColorButton: string; 
     radiantCircleColor: string
     isDisabled: boolean;
-    lock: boolean }> = ({ number, bgColorButton, radiantCircleColor, isDisabled, lock }) => {
+    lock: boolean;
+    borderColor: string;  }> = ({ number, bgColorButton, radiantCircleColor, isDisabled, lock, borderColor }) => {
     return(
         <>
             <Box 
@@ -23,7 +24,7 @@ const RewardBlock: React.FC<{
                     w="100%" 
                     h="100%" 
                     p="0.25rem" 
-                    border="2px solid #245EB4"
+                    border={`2px solid ${borderColor}`}
                     borderRadius="20px"
                     background={`radial-gradient(circle, ${radiantCircleColor} 0%, transparent 80%)`}
                 >

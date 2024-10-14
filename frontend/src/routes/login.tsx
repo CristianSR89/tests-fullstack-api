@@ -74,9 +74,9 @@ function Login() {
     <>
       <Navbar></Navbar>
       <Header></Header>
-      <Flex justify="center" mt="3rem"> 
+      <Flex justify="center" p="3rem"> 
         <ProfileInfoHome></ProfileInfoHome>
-        <Box ml="4rem">
+        <Box ml="4rem" maxW="600px">
           <Cheers></Cheers>
           <DailyRewards mt="3rem"></DailyRewards>
         </Box>

@@ -13,24 +13,24 @@ const Cheers = () => {
                     fontWeight="bolder"
                     borderRadius="0 0 3rem 3rem"
                     overflow="auto"
-                    p="1rem"
+                    p="0 1rem"
                     boxShadow="md">
                     <Flex w="100%" wrap="wrap" justify="space-between" align="center">
-                        <Image height="102" src="/public/assets/images/logo-cheers.png"/>
-                        <Box h="102px">
-                            <Box w="100%" h="18px" lineHeight="18px"></Box>
-                            <Heading as="h1" fontSize="52px" textAlign="center" h="84px">CHEERS</Heading>
+                        <Image height="84" src="/public/assets/images/logo-cheers.png"/>
+                        <Box h="84px">
+                            <Box w="100%" h="12px" lineHeight="18px"></Box>
+                            <Heading as="h1" fontStyle="italic" fontSize="52px" textAlign="center" h="84px">CHEERS</Heading>
                         </Box>
                     </Flex>
                     <Divider 
-                        borderWidth='2px' 
+                        borderWidth='1px' 
                         borderColor="rgb(83, 19, 193)" 
                         opacity="1" 
-                        m="0 1rem" 
-                        h="100" 
+                        m="1rem" 
+                        h="80px" 
                         orientation="vertical"></Divider>
-                    <Box>
-                        <Text fontSize="18px" lineHeight="18px">BALANCE</Text>
+                    <Box mt="1rem">
+                        <Text fontSize="18px" fontStyle="italic" lineHeight="18px">BALANCE</Text>
                         <Heading as="h3" textAlign="center" fontSize="52px" h="84px">0</Heading>
                     </Box>
                 </Flex>

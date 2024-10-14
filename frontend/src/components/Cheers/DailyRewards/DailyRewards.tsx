@@ -1,46 +1,47 @@
-import {Box, Button, Card, Flex, Heading, Image, VStack, chakra} from "@chakra-ui/react";
+import {Box, Button, Card, Flex, Heading, Image, VStack, useTheme} from "@chakra-ui/react";
 
 import RewardBlock from "./RewardBlock";
 
-const rewardsItems = [
-    { id: 1, bg: "#3279C4", src: "/public/assets/images/tier_1_icon.png" },
-    { id: 2, bg: "#6839B9", src: "/public/assets/images/tier_2_icon.png" },
-    { id: 3, bg: "#F3BE44", src: "/public/assets/images/tier_3_icon.png" }
-  ];
-
-const freeReward = [
-    { id: 1, number: 10, isDisabled: false, lock: false },
-    { id: 2, number: 10, isDisabled: false, lock: false },
-    { id: 3, number: 20, isDisabled: false, lock: false },
-    { id: 4, number: 20, isDisabled: true, lock: false },
-    { id: 5, number: 30, isDisabled: true, lock: true },
-];
-
-const fanReward = [
-    { id: 1, number: 30, isDisabled: false, lock: false },
-    { id: 2, number: 30, isDisabled: false, lock: false },
-    { id: 3, number: 40, isDisabled: false, lock: false },
-    { id: 4, number: 40, isDisabled: true, lock: false },
-    { id: 5, number: 50, isDisabled: true, lock: true },
-];
-
-const vipReward = [
-    { id: 1, number: 50, isDisabled: false, lock: false },
-    { id: 2, number: 50, isDisabled: false, lock: false },
-    { id: 3, number: 60, isDisabled: false, lock: false },
-    { id: 4, number: 60, isDisabled: true, lock: false },
-    { id: 5, number: 100, isDisabled: true, lock: true },
-];
-
-const rewardsConfig = [
-    { id: 1, rewards: freeReward, bgColorButton: "rgb(50, 121, 196)", bgColor: "#439AD3", radiantCircleColor: "rgb(190, 227, 248)" },
-    { id: 2, rewards: fanReward, bgColorButton: "rgb(104, 57, 185)", bgColor: "#5313C1", radiantCircleColor: "rgb(214, 188, 250)" },
-    { id: 3, rewards: vipReward, bgColorButton: "rgb(243, 190, 68)", bgColor: "#E89937", radiantCircleColor: "rgb(250, 240, 137)" },
-];
-
 const DailyRewards = (props: any) => {
+    const theme = useTheme();
+
+    const rewardsItems = [
+        { id: 1, bg: theme.colors.tier.free[200], src: "/public/assets/images/tier_1_icon.png" },
+        { id: 2, bg: theme.colors.tier.fan[200], src: "/public/assets/images/tier_2_icon.png" },
+        { id: 3, bg: theme.colors.tier.vip[200], src: "/public/assets/images/tier_3_icon.png" }
+    ];
+
+    const freeReward = [
+        { id: 1, number: 10, isDisabled: false, lock: false },
+        { id: 2, number: 10, isDisabled: false, lock: false },
+        { id: 3, number: 20, isDisabled: false, lock: false },
+        { id: 4, number: 20, isDisabled: true, lock: false },
+        { id: 5, number: 30, isDisabled: true, lock: true },
+    ];
+
+    const fanReward = [
+        { id: 1, number: 30, isDisabled: false, lock: false },
+        { id: 2, number: 30, isDisabled: false, lock: false },
+        { id: 3, number: 40, isDisabled: false, lock: false },
+        { id: 4, number: 40, isDisabled: true, lock: false },
+        { id: 5, number: 50, isDisabled: true, lock: true },
+    ];
+
+    const vipReward = [
+        { id: 1, number: 50, isDisabled: false, lock: false },
+        { id: 2, number: 50, isDisabled: false, lock: false },
+        { id: 3, number: 60, isDisabled: false, lock: false },
+        { id: 4, number: 60, isDisabled: true, lock: false },
+        { id: 5, number: 100, isDisabled: true, lock: true },
+    ];
+
+    const rewardsConfig = [
+        { id: 1, rewards: freeReward, bgColorButton: theme.colors.tier.free[200], bgColor: theme.colors.tier.free[100], radiantCircleColor: "rgb(190, 227, 248)", borderColor: theme.colors.tier.free[300] },
+        { id: 2, rewards: fanReward, bgColorButton: theme.colors.tier.fan[200], bgColor: theme.colors.tier.fan[100], radiantCircleColor: "rgb(214, 188, 250)", borderColor: theme.colors.tier.fan[100] },
+        { id: 3, rewards: vipReward, bgColorButton: theme.colors.tier.vip[200], bgColor: theme.colors.tier.vip[100], radiantCircleColor: "rgb(250, 240, 137)", borderColor: theme.colors.tier.vip[100] },
+    ];
     return (
-        <>
+        <> 
             <Card 
                 bg="rgb(0,0,0,0.5)" 
                 borderRadius="1.5rem" 
@@ -121,7 +122,7 @@ const DailyRewards = (props: any) => {
                             }}
                             >
                             <Flex justify="center" >
-                                {rewardsConfig.map(({ rewards, bgColor, bgColorButton, radiantCircleColor }) => (
+                                {rewardsConfig.map(({ rewards, bgColor, bgColorButton, radiantCircleColor, borderColor }) => (
                                     <VStack p="2rem 1px 1rem" key={bgColor} spacing="20px" backgroundColor={bgColor}>
                                         {rewards.map((item) => (
                                             <RewardBlock 
@@ -131,6 +132,7 @@ const DailyRewards = (props: any) => {
                                                 bgColorButton={bgColorButton}
                                                 isDisabled={item.isDisabled} 
                                                 lock={item.lock}
+                                                borderColor={borderColor}
                                             />
                                         ))}
                                     </VStack>
@@ -144,4 +146,4 @@ const DailyRewards = (props: any) => {
     );
 }
  
-export default chakra(DailyRewards)
+export default DailyRewards

@@ -6,7 +6,7 @@ const ProfileInfoHome = () => {
             <Flex p='5px' w='200px' flexFlow='column' align='center' color='white'>
                 <Image border='solid' borderWidth='2px' borderColor='white' borderRadius='50%' w='96px' src="/assets/images/profile-avatar.png"/>
                 <Text mt='1rem' fontSize='16px' fontWeight='bold'>MOKEN.FBE26</Text>
-                <Flex>
+                <Flex w="100%" alignItems='center' justifyContent="flex-start"> 
                     <Image mr='0.5rem' w='24px' src="/assets/images/tier_1_icon.png"/>
                     <Text fontSize='14px'>FREE User</Text>
                 </Flex>
