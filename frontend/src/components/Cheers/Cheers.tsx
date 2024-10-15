@@ -12,10 +12,9 @@ const Cheers = () => {
                     color="rgb(83, 19, 193)" 
                     fontWeight="bolder"
                     borderRadius="0 0 3rem 3rem"
-                    overflow="auto"
                     p="0 1rem"
                     boxShadow="md">
-                    <Flex w="100%" wrap="wrap" justify="space-between" align="center">
+                    <Flex overflow="hidden" w="100%" wrap="wrap" justify="space-between" align="center">
                         <Image height="84" src="/public/assets/images/logo-cheers.png"/>
                         <Box h="84px">
                             <Box w="100%" h="12px" lineHeight="18px"></Box>
@@ -26,12 +25,12 @@ const Cheers = () => {
                         borderWidth='1px' 
                         borderColor="rgb(83, 19, 193)" 
                         opacity="1" 
-                        m="1rem" 
+                        m="0.5rem" 
                         h="80px" 
                         orientation="vertical"></Divider>
                     <Box mt="1rem">
                         <Text fontSize="18px" fontStyle="italic" lineHeight="18px">BALANCE</Text>
-                        <Heading as="h3" textAlign="center" fontSize="52px" h="84px">0</Heading>
+                        <Heading as="h3" textAlign="center" fontSize="52px">0</Heading>
                     </Box>
                 </Flex>
                 <Text fontSize="16" color="white" textAlign="center" mt="1.5rem">

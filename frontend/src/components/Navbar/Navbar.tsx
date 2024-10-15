@@ -1,5 +1,7 @@
 import {Flex, IconButton, Menu, MenuButton, MenuItem, MenuList} from "@chakra-ui/react";
-import { HamburgerIcon, LockIcon, UnlockIcon } from "@chakra-ui/icons";
+import { LockIcon, UnlockIcon } from "@chakra-ui/icons";
+
+import { FaUserAstronaut } from "react-icons/fa"
 
 const Navbar = () => {
     return (
@@ -11,9 +13,11 @@ const Navbar = () => {
                         variant='primary'
                         as={IconButton}
                         aria-label='Settings'
-                        icon={<HamburgerIcon/>}
+                        icon={<FaUserAstronaut/>}
                     />
-                    <MenuList bg="ui.dark" borderColor='gray.300'>
+                    <MenuList 
+                        bg="ui.dark" 
+                        borderColor='rgba(255, 255, 255, 0.16)'>
                         <MenuItem as='a' href='#' color='white' bg="ui.dark" icon={<LockIcon/>}>
                             My profile
                         </MenuItem>

@@ -1,4 +1,6 @@
-import { Box, Button, Image, Text } from "@chakra-ui/react";
+import { Box, Button, Flex, Image, Text } from "@chakra-ui/react";
+
+import { FaCheck } from "react-icons/fa";
 
 const RewardBlock: React.FC<{ 
     number: number; 
@@ -9,14 +11,13 @@ const RewardBlock: React.FC<{
     borderColor: string;  }> = ({ number, bgColorButton, radiantCircleColor, isDisabled, lock, borderColor }) => {
     return(
         <>
-            <Box 
+            <Flex 
                 opacity={isDisabled ? "0.5" : "1"} 
                 bg={bgColorButton} 
-                border="solid 1px black" 
-                p="1rem" 
-                w="198px" 
-                h="198px" 
-                borderRadius="20px">
+                border="solid 1px black"
+                borderRadius="20px"
+                align="center"
+                justify="center">
                 <Button 
                     variant={isDisabled ? "no_disable" : ""} 
                     bg={bgColorButton} 
@@ -24,10 +25,13 @@ const RewardBlock: React.FC<{
                     w="100%" 
                     h="100%" 
                     p="0.25rem" 
+                    m="0.75rem"
                     border={`2px solid ${borderColor}`}
                     borderRadius="20px"
                     background={`radial-gradient(circle, ${radiantCircleColor} 0%, transparent 80%)`}
                 >
+                    
+                    <FaCheck />
                     <Image opacity="0.4" src="/public/assets/images/logo-cheers_white.png"/>
                     <Text 
                         textShadow="rgb(0, 0, 0) 0px 4px 0px" 
@@ -51,7 +55,7 @@ const RewardBlock: React.FC<{
                             src="/public/assets/images/padlock_2.png"/>
                     : null }
                 </Button>
-            </Box>
+            </Flex>
         </>
     );
 }

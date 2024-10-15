@@ -1,5 +1,6 @@
 import {Box, Button, Card, Flex, Heading, Image, VStack, useTheme} from "@chakra-ui/react";
 
+import DailyMarkup from "./DailyMarkup/DailyMarkup";
 import RewardBlock from "./RewardBlock";
 
 const DailyRewards = (props: any) => {
@@ -45,19 +46,23 @@ const DailyRewards = (props: any) => {
             <Card 
                 bg="rgb(0,0,0,0.5)" 
                 borderRadius="1.5rem" 
-                p="2rem" 
-                boxShadow="rgba(0, 0, 0, 1) 0px 3px 0px 1px"
+                border="none"
+                p="2rem"
                 {...props}
             >
                 <Heading 
                     letterSpacing="-3px" 
                     as="h2" 
+                    fontWeight="400"
                     fontSize="60px" 
                     textAlign="center" 
                     fontStyle='italic'
                     textShadow="rgb(0, 0, 0) 0px 6px 0px"
                     lineHeight="55px"
-                    color="white">Daily Rewards!</Heading>
+                    color="white"
+                    sx={{
+                        WebkitTextStroke: '3px black',
+                    }}>Daily Rewards!</Heading>
                 <Heading 
                     m="3rem 0 1rem"
                     as="h4" 
@@ -68,7 +73,8 @@ const DailyRewards = (props: any) => {
                     color="white">Mission finished!</Heading>
                 <Flex align="center" flexFlow="column">
                     <Box w="fit-content">
-                        <Flex position="relative" justify="center" zIndex="10" w="100%" pr="calc(2rem + 14px)">
+                        <Flex position="relative" justify="center" zIndex="10" w="100%" pr="calc(1rem + 14px)">
+                            <Box w="35px" mr="1rem"></Box>
                             {rewardsItems.map((item) => (
                                 <Flex key={item.id} align="center" flexFlow="column">
                                     <Button
@@ -87,22 +93,22 @@ const DailyRewards = (props: any) => {
                                         justify="center"
                                         align="center"
                                         border="solid 1px black"
-                                        w="200px"
+                                        w="100%"
                                         h="90px"
                                         bg={item.bg}
                                         borderRadius="20px"
                                         mt="4rem"
                                     >
-                                        <Image overflow="hidden" mt="-2rem" w="90%" src={item.src} />
+                                        <Image mt="-2rem" w="90%" src={item.src} />
                                     </Flex>
                                 </Flex>
                             ))}
                         </Flex>
-                        <Box 
+                        <Flex 
                             mt="-1rem" 
                             h="800px" 
                             overflowY="auto"
-                            pr="2rem"
+                            pr="1rem"
                             zIndex="5"
                             sx={{
                                 '::-webkit-scrollbar': {
@@ -121,9 +127,10 @@ const DailyRewards = (props: any) => {
                                 },
                             }}
                             >
+                            <DailyMarkup mt="6rem" mr="0.5rem" number={freeReward.length}></DailyMarkup>
                             <Flex justify="center" >
                                 {rewardsConfig.map(({ rewards, bgColor, bgColorButton, radiantCircleColor, borderColor }) => (
-                                    <VStack p="2rem 1px 1rem" key={bgColor} spacing="20px" backgroundColor={bgColor}>
+                                    <VStack h="fit-content" p="2rem 1px 1rem" key={bgColor} spacing="20px" backgroundColor={bgColor}>
                                         {rewards.map((item) => (
                                             <RewardBlock 
                                                 key={item.id}
@@ -138,7 +145,7 @@ const DailyRewards = (props: any) => {
                                     </VStack>
                                 ))}
                             </Flex>
-                        </Box>
+                        </Flex>
                     </Box>
                 </Flex>
             </Card>
