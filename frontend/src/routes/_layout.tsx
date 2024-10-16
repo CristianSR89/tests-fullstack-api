@@ -39,29 +39,31 @@ function Layout() {
     <>
       <Navbar></Navbar>
       <Header></Header>
-      <Flex justify="center" p="2rem 3rem"> 
-        <ProfileInfoHome></ProfileInfoHome>
-        <Box ml="2.5rem" maxW="calc(100% - 200px)" w="100%">
-          <Tabs w="100%" variant="rounded" pt="1rem">
-            <TabList>
-              <Tab>Cheers</Tab>
-              <Tab>Two</Tab>
-              <Tab>Three</Tab>
-            </TabList>
-            <TabPanels>
-              <TabPanel p="2rem 0">
-                <Cheers></Cheers>
-                <DailyRewards mt="3rem"></DailyRewards>
-              </TabPanel>
-              <TabPanel p="2rem 0">
-                <p>two!</p>
-              </TabPanel>
-              <TabPanel p="2rem 0">
-                <p>three!</p>
-              </TabPanel>
-            </TabPanels>
-          </Tabs>
-        </Box>
+      <Flex w="100%" justify="center" p="2rem 3rem">
+        <Flex justify="space-between" maxW="900px" >
+          <ProfileInfoHome></ProfileInfoHome>
+          <Box ml="2.5rem" maxW="calc(100% - 200px)" w="100%">
+            <Tabs w="100%" variant="rounded" pt="1rem">
+              <TabList>
+                <Tab>Cheers</Tab>
+                <Tab>Two</Tab>
+                <Tab>Three</Tab>
+              </TabList>
+              <TabPanels>
+                <TabPanel p="2rem 0">
+                  <Cheers></Cheers>
+                  <DailyRewards mt="3rem"></DailyRewards>
+                </TabPanel>
+                <TabPanel p="2rem 0">
+                  <p>two!</p>
+                </TabPanel>
+                <TabPanel p="2rem 0">
+                  <p>three!</p>
+                </TabPanel>
+              </TabPanels>
+            </Tabs>
+          </Box>
+        </Flex> 
       </Flex>
     </>
   )

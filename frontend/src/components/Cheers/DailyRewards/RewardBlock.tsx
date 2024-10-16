@@ -1,4 +1,4 @@
-import { Box, Button, Flex, Image, Text } from "@chakra-ui/react";
+import { Box, Button, Flex, Image, Text, chakra } from "@chakra-ui/react";
 
 import { FaCheck } from "react-icons/fa";
 
@@ -9,7 +9,9 @@ const RewardBlock: React.FC<{
     isDisabled: boolean;
     lock: boolean;
     borderColor: string;  }> = ({ number, bgColorButton, radiantCircleColor, isDisabled, lock, borderColor }) => {
-    return(
+        const StyledFaCheck = chakra(FaCheck);
+        
+        return(
         <>
             <Flex 
                 opacity={isDisabled ? "0.5" : "1"} 
@@ -30,8 +32,15 @@ const RewardBlock: React.FC<{
                     borderRadius="20px"
                     background={`radial-gradient(circle, ${radiantCircleColor} 0%, transparent 80%)`}
                 >
-                    
-                    <FaCheck />
+                    <StyledFaCheck 
+                        w="100%"
+                        h="90%"
+                        color="green"
+                        stroke="darkgreen"
+                        position="absolute"
+                        strokeWidth="20px"
+                        opacity="10"
+                    />
                     <Image opacity="0.4" src="/public/assets/images/logo-cheers_white.png"/>
                     <Text 
                         textShadow="rgb(0, 0, 0) 0px 4px 0px" 

@@ -40,7 +40,7 @@ const DailyMarkup: React.FC<{
                                 w="15px" 
                                 border="solid black 1px" 
                                 bg={theme.colors.ui.claim}
-                                h="9.25rem"
+                                h="134px"
                             />
                         )}
                     </Flex>

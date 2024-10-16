@@ -74,9 +74,14 @@ const DailyRewards = (props: any) => {
                 <Flex align="center" flexFlow="column">
                     <Box w="fit-content">
                         <Flex position="relative" justify="center" zIndex="10" w="100%" pr="calc(1rem + 14px)">
-                            <Box w="35px" mr="1rem"></Box>
+                            <Box w="35px" mr="10px"></Box>
                             {rewardsItems.map((item) => (
-                                <Flex key={item.id} align="center" flexFlow="column">
+                                <Flex 
+                                    key={item.id} 
+                                    align="center" 
+                                    flexFlow="column"
+                                    w="130px"
+                                >
                                     <Button
                                         w="fit-content"
                                         h="40px"
@@ -84,7 +89,7 @@ const DailyRewards = (props: any) => {
                                         isDisabled={true}
                                         fontWeight="bolder"
                                         fontSize="20px"
-                                        p="0 2rem"
+                                        p="1rem"
                                         borderRadius="10px"
                                     >
                                         Claim!
@@ -99,7 +104,7 @@ const DailyRewards = (props: any) => {
                                         borderRadius="20px"
                                         mt="4rem"
                                     >
-                                        <Image mt="-2rem" w="90%" src={item.src} />
+                                        <Image mt="-2.5rem" w="90%" src={item.src} />
                                     </Flex>
                                 </Flex>
                             ))}
@@ -127,10 +132,20 @@ const DailyRewards = (props: any) => {
                                 },
                             }}
                             >
-                            <DailyMarkup mt="6rem" mr="0.5rem" number={freeReward.length}></DailyMarkup>
+                            <DailyMarkup 
+                                mt="5rem" 
+                                mr="10px" 
+                                number={freeReward.length}></DailyMarkup>
                             <Flex justify="center" >
                                 {rewardsConfig.map(({ rewards, bgColor, bgColorButton, radiantCircleColor, borderColor }) => (
-                                    <VStack h="fit-content" p="2rem 1px 1rem" key={bgColor} spacing="20px" backgroundColor={bgColor}>
+                                    <VStack 
+                                        w="130px"
+                                        h="fit-content" 
+                                        p="2rem 1px 1rem" 
+                                        key={bgColor} 
+                                        spacing="20px" 
+                                        backgroundColor={bgColor}
+                                    >
                                         {rewards.map((item) => (
                                             <RewardBlock 
                                                 key={item.id}
