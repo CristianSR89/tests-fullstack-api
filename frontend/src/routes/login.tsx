@@ -1,7 +1,9 @@
 import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons"
 import {
+  Box,
   Button,
   Container,
+  Flex,
   FormControl,
   FormErrorMessage,
   Icon,
@@ -19,11 +21,15 @@ import {
   redirect,
 } from "@tanstack/react-router"
 import { type SubmitHandler, useForm } from "react-hook-form"
-
 import Logo from "/assets/images/fastapi-logo.svg"
 import type { Body_login_login_access_token as AccessToken } from "../client"
 import useAuth, { isLoggedIn } from "../hooks/useAuth"
 import { emailPattern } from "../utils"
+import Navbar from "../components/Navbar/Navbar"
+import Header from "../components/Header/Header"
+import ProfileInfoHome from "../components/ProfileInfoHome/ProfileInfoHome"
+import Cheers from "../components/Cheers/Cheers"
+import DailyRewards from "../components/Cheers/DailyRewards/DailyRewards"
 
 export const Route = createFileRoute("/login")({
   component: Login,
@@ -66,6 +72,15 @@ function Login() {
 
   return (
     <>
+      <Navbar></Navbar>
+      <Header></Header>
+      <Flex justify="center" p="3rem"> 
+        <ProfileInfoHome></ProfileInfoHome>
+        <Box ml="4rem" maxW="600px">
+          <Cheers></Cheers>
+          <DailyRewards mt="3rem"></DailyRewards>
+        </Box>
+      </Flex>
       <Container
         as="form"
         onSubmit={handleSubmit(onSubmit)}
@@ -76,7 +91,7 @@ function Login() {
         gap={4}
         centerContent
       >
-        <Image
+        <Image 
           src={Logo}
           alt="FastAPI logo"
           height="auto"
@@ -129,7 +144,8 @@ function Login() {
         <Link as={RouterLink} to="/recover-password" color="blue.500">
           Forgot password?
         </Link>
-        <Button variant="primary" type="submit" isLoading={isSubmitting}>
+        <Button 
+          variant="primary" type="submit" isLoading={isSubmitting}>
           Log In
         </Button>
         <Text>

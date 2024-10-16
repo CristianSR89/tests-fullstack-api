@@ -1,11 +1,12 @@
-import { ChakraProvider } from "@chakra-ui/react"
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
 import { RouterProvider, createRouter } from "@tanstack/react-router"
-import ReactDOM from "react-dom/client"
-import { routeTree } from "./routeTree.gen"
 
-import { StrictMode } from "react"
+import { ChakraProvider } from "@chakra-ui/react"
+import Fonts from "./fonts"
 import { OpenAPI } from "./client"
+import ReactDOM from "react-dom/client"
+import { StrictMode } from "react"
+import { routeTree } from "./routeTree.gen"
 import theme from "./theme"
 
 OpenAPI.BASE = import.meta.env.VITE_API_URL
@@ -24,6 +25,7 @@ declare module "@tanstack/react-router" {
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <StrictMode>
+    <Fonts/>
     <ChakraProvider theme={theme}>
       <QueryClientProvider client={queryClient}>
         <RouterProvider router={router} />
