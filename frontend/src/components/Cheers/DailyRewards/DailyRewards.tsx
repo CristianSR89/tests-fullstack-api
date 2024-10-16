@@ -111,7 +111,7 @@ const DailyRewards = (props: any) => {
                         </Flex>
                         <Flex 
                             mt="-1rem" 
-                            h="800px" 
+                            h="600px" 
                             overflowY="auto"
                             pr="1rem"
                             zIndex="5"
@@ -136,7 +136,7 @@ const DailyRewards = (props: any) => {
                                 mt="5rem" 
                                 mr="10px" 
                                 number={freeReward.length}></DailyMarkup>
-                            <Flex justify="center" >
+                            <Flex justify="center">
                                 {rewardsConfig.map(({ rewards, bgColor, bgColorButton, radiantCircleColor, borderColor }) => (
                                     <VStack 
                                         w="130px"
