@@ -1,4 +1,4 @@
-import { Box, Button, Flex, Image, Text, chakra } from "@chakra-ui/react";
+import { Button, Flex, Image, Text, chakra } from "@chakra-ui/react";
 
 import { FaCheck } from "react-icons/fa";
 

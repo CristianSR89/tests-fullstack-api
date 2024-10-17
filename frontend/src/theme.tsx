@@ -46,6 +46,9 @@ const theme = extendTheme({
       darkSlate: "#252D3D",
       dim: "#A0AEC0",
       claim: "#E89937",
+      textBlue: "#5313C1",
+      bgYellow: "#ECC94B",
+      pack: "#77D03F"
     },
     tier: {
       free: {
@@ -93,6 +96,13 @@ const theme = extendTheme({
         },
         claim: {
           backgroundColor: "ui.claim",
+          color: "black",
+          _hover: {
+            backgroundColor: "rgba(255, 255, 255, 0.16)",
+          },
+        },
+        pack: {
+          backgroundColor: "ui.pack",
           color: "black",
           _hover: {
             backgroundColor: "rgba(255, 255, 255, 0.16)",

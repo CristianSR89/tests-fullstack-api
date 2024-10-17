@@ -7,9 +7,21 @@ const DailyRewards = (props: any) => {
     const theme = useTheme();
 
     const rewardsItems = [
-        { id: 1, bg: theme.colors.tier.free[200], src: "/public/assets/images/tier_1_icon.png" },
-        { id: 2, bg: theme.colors.tier.fan[200], src: "/public/assets/images/tier_2_icon.png" },
-        { id: 3, bg: theme.colors.tier.vip[200], src: "/public/assets/images/tier_3_icon.png" }
+        { 
+            id: 1, 
+            bg: theme.colors.tier.free[200], 
+            src: "/public/assets/images/tier_1_icon.png" 
+        },
+        { 
+            id: 2, 
+            bg: theme.colors.tier.fan[200], 
+            src: "/public/assets/images/tier_2_icon.png" 
+        },
+        { 
+            id: 3, 
+            bg: theme.colors.tier.vip[200], 
+            src: "/public/assets/images/tier_3_icon.png" 
+        }
     ];
 
     const freeReward = [
@@ -37,14 +49,35 @@ const DailyRewards = (props: any) => {
     ];
 
     const rewardsConfig = [
-        { id: 1, rewards: freeReward, bgColorButton: theme.colors.tier.free[200], bgColor: theme.colors.tier.free[100], radiantCircleColor: "rgb(190, 227, 248)", borderColor: theme.colors.tier.free[300] },
-        { id: 2, rewards: fanReward, bgColorButton: theme.colors.tier.fan[200], bgColor: theme.colors.tier.fan[100], radiantCircleColor: "rgb(214, 188, 250)", borderColor: theme.colors.tier.fan[100] },
-        { id: 3, rewards: vipReward, bgColorButton: theme.colors.tier.vip[200], bgColor: theme.colors.tier.vip[100], radiantCircleColor: "rgb(250, 240, 137)", borderColor: theme.colors.tier.vip[100] },
+        { 
+            id: 1, 
+            rewards: freeReward, 
+            bgColorButton: theme.colors.tier.free[200], 
+            bgColor: theme.colors.tier.free[100], 
+            radiantCircleColor: "rgb(190, 227, 248)", 
+            borderColor: theme.colors.tier.free[300] 
+        },
+        { 
+            id: 2, 
+            rewards: fanReward, 
+            bgColorButton: theme.colors.tier.fan[200], 
+            bgColor: theme.colors.tier.fan[100], 
+            radiantCircleColor: "rgb(214, 188, 250)", 
+            borderColor: theme.colors.tier.fan[100] 
+        },
+        { 
+            id: 3, 
+            rewards: vipReward, 
+            bgColorButton: theme.colors.tier.vip[200], 
+            bgColor: theme.colors.tier.vip[100], 
+            radiantCircleColor: "rgb(250, 240, 137)", 
+            borderColor: theme.colors.tier.vip[100] 
+        },
     ];
     return (
         <> 
             <Card 
-                bg="rgb(0,0,0,0.5)" 
+                bg="rgb(0,0,0,0.2)" 
                 borderRadius="1.5rem" 
                 border="none"
                 p="2rem"
@@ -54,7 +87,7 @@ const DailyRewards = (props: any) => {
                     letterSpacing="-3px" 
                     as="h2" 
                     fontWeight="400"
-                    fontSize="60px" 
+                    fontSize={{ base: "4xl", md: "6xl" }}
                     textAlign="center" 
                     fontStyle='italic'
                     textShadow="rgb(0, 0, 0) 0px 6px 0px"
@@ -73,7 +106,13 @@ const DailyRewards = (props: any) => {
                     color="white">Mission finished!</Heading>
                 <Flex align="center" flexFlow="column">
                     <Box w="fit-content">
-                        <Flex position="relative" justify="center" zIndex="10" w="100%" pr="calc(1rem + 14px)">
+                        <Flex 
+                            position="relative" 
+                            justify="center" 
+                            zIndex="10" 
+                            w="100%" 
+                            pr="calc(1rem + 14px)"
+                        >
                             <Box w="35px" mr="10px"></Box>
                             {rewardsItems.map((item) => (
                                 <Flex 
@@ -104,7 +143,10 @@ const DailyRewards = (props: any) => {
                                         borderRadius="20px"
                                         mt="4rem"
                                     >
-                                        <Image mt="-2.5rem" w="90%" src={item.src} />
+                                        <Image 
+                                            mt="-2.5rem" 
+                                            w="90%" src={item.src} 
+                                        />
                                     </Flex>
                                 </Flex>
                             ))}
@@ -137,7 +179,13 @@ const DailyRewards = (props: any) => {
                                 mr="10px" 
                                 number={freeReward.length}></DailyMarkup>
                             <Flex justify="center">
-                                {rewardsConfig.map(({ rewards, bgColor, bgColorButton, radiantCircleColor, borderColor }) => (
+                                {rewardsConfig.map(({ 
+                                    rewards, 
+                                    bgColor, 
+                                    bgColorButton, 
+                                    radiantCircleColor, 
+                                    borderColor 
+                                }) => (
                                     <VStack 
                                         w="130px"
                                         h="fit-content" 
